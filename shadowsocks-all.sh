@@ -1028,7 +1028,7 @@ install_completed_python(){
     clear
     ${shadowsocks_python_init} start
     echo
-    echo -e "Congratulations, ${green}${software[0]}${plain} server install completed!"
+    echo -e "恭喜, ${green}${software[0]}${plain} 已经安装成功!"
     echo -e "Your Server IP        : ${red} $(get_ip) ${plain}"
     echo -e "Your Server Port      : ${red} ${shadowsocksport} ${plain}"
     echo -e "Your Password         : ${red} ${shadowsockspwd} ${plain}"
@@ -1039,7 +1039,7 @@ install_completed_r(){
     clear
     ${shadowsocks_r_init} start
     echo
-    echo -e "Congratulations, ${green}${software[1]}${plain} server install completed!"
+    echo -e "恭喜, ${green}${software[1]}${plain} 已经安装成功!"
     echo -e "Your Server IP        : ${red} $(get_ip) ${plain}"
     echo -e "Your Server Port      : ${red} ${shadowsocksport} ${plain}"
     echo -e "Your Password         : ${red} ${shadowsockspwd} ${plain}"
@@ -1052,7 +1052,7 @@ install_completed_go(){
     clear
     ${shadowsocks_go_init} start
     echo
-    echo -e "Congratulations, ${green}${software[2]}${plain} server install completed!"
+    echo -e "恭喜, ${green}${software[2]}${plain} 已经安装成功!"
     echo -e "Your Server IP        : ${red} $(get_ip) ${plain}"
     echo -e "Your Server Port      : ${red} ${shadowsocksport} ${plain}"
     echo -e "Your Password         : ${red} ${shadowsockspwd} ${plain}"
@@ -1064,7 +1064,7 @@ install_completed_libev(){
     ldconfig
     ${shadowsocks_libev_init} start
     echo
-    echo -e "Congratulations, ${green}${software[3]}${plain} server install completed!"
+    echo -e "恭喜, ${green}${software[3]}${plain} 已经安装成功!"
     echo -e "Your Server IP        : ${red} $(get_ip) ${plain}"
     echo -e "Your Server Port      : ${red} ${shadowsocksport} ${plain}"
     echo -e "Your Password         : ${red} ${shadowsockspwd} ${plain}"
@@ -1079,10 +1079,10 @@ qr_generate_python(){
         local tmp=$(echo -n "${shadowsockscipher}:${shadowsockspwd}@$(get_ip):${shadowsocksport}" | base64 -w0)
         local qr_code="ss://${tmp}"
         echo
-        echo "Your QR Code: (For Shadowsocks Windows, OSX, Android and iOS clients)"
+        echo "你的二维码: (windows 安卓，ios 客户端都可以使用)"
         echo -e "${green} ${qr_code} ${plain}"
         echo -n "${qr_code}" | qrencode -s8 -o ${cur_dir}/shadowsocks_python_qr.png
-        echo "Your QR Code has been saved as a PNG file path:"
+        echo "你的二维码 保存地址:"
         echo -e "${green} ${cur_dir}/shadowsocks_python_qr.png ${plain}"
     fi
 }
@@ -1093,10 +1093,10 @@ qr_generate_r(){
         local tmp2=$(echo -n "$(get_ip):${shadowsocksport}:${shadowsockprotocol}:${shadowsockscipher}:${shadowsockobfs}:${tmp1}/?obfsparam=" | base64 -w0)
         local qr_code="ssr://${tmp2}"
         echo
-        echo "Your QR Code: (For ShadowsocksR Windows, Android clients only)"
+        echo "你的二维码: (只能用于安卓 windows客户端)"
         echo -e "${green} ${qr_code} ${plain}"
         echo -n "${qr_code}" | qrencode -s8 -o ${cur_dir}/shadowsocks_r_qr.png
-        echo "Your QR Code has been saved as a PNG file path:"
+        echo "你的二维码 保存地址:"
         echo -e "${green} ${cur_dir}/shadowsocks_r_qr.png ${plain}"
     fi
 }
@@ -1106,10 +1106,10 @@ qr_generate_go(){
         local tmp=$(echo -n "${shadowsockscipher}:${shadowsockspwd}@$(get_ip):${shadowsocksport}" | base64 -w0)
         local qr_code="ss://${tmp}"
         echo
-        echo "Your QR Code: (For Shadowsocks Windows, OSX, Android and iOS clients)"
+        echo "你的二维码: (For Shadowsocks Windows, OSX, Android and iOS clients)"
         echo -e "${green} ${qr_code} ${plain}"
         echo -n "${qr_code}" | qrencode -s8 -o ${cur_dir}/shadowsocks_go_qr.png
-        echo "Your QR Code has been saved as a PNG file path:"
+        echo "你的二维码 保存地址:"
         echo -e "${green} ${cur_dir}/shadowsocks_go_qr.png ${plain}"
     fi
 }
@@ -1119,10 +1119,10 @@ qr_generate_libev(){
         local tmp=$(echo -n "${shadowsockscipher}:${shadowsockspwd}@$(get_ip):${shadowsocksport}" | base64 -w0)
         local qr_code="ss://${tmp}"
         echo
-        echo "Your QR Code: (For Shadowsocks Windows, OSX, Android and iOS clients)"
+        echo "你的二维码: (windows 安卓，ios 客户端都可以使用)"
         echo -e "${green} ${qr_code} ${plain}"
         echo -n "${qr_code}" | qrencode -s8 -o ${cur_dir}/shadowsocks_libev_qr.png
-        echo "Your QR Code has been saved as a PNG file path:"
+        echo "你的二维码 保存地址: "
         echo -e "${green} ${cur_dir}/shadowsocks_libev_qr.png ${plain}"
     fi
 }
@@ -1155,8 +1155,8 @@ install_main(){
     fi
 
     echo
-    echo "Welcome to visit: https://teddysun.com/486.html"
-    echo "Enjoy it!"
+    echo "已经安装完成，如果觉得不错可以访问 https://github.com/wenzhifeifeidetutu/"
+    echo "敬请享受吧!"
     echo
 }
 
